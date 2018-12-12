@@ -20,37 +20,37 @@ class Rec_Dialog(object):
 
         #목표몸무게달성
         self.label = QtWidgets.QLabel(Dialog)
-        self.label.setGeometry(QtCore.QRect(40, 20, 220, 60))
+        self.label.setGeometry(QtCore.QRect(20, 20, 220, 60))
         self.label.setObjectName("label")
         self.label.setFont(font)
 
         #달성 %
-        self.label_1 = QtWidgets.QLabel(Dialog)
-        self.label_1.setGeometry(QtCore.QRect(140, 65, 50, 30))
-        self.label_1.setObjectName("label1")
-        self.label_1.setFont(font)
+        # self.label_1 = QtWidgets.QLabel(Dialog)
+        # self.label_1.setGeometry(QtCore.QRect(140, 65, 50, 30))
+        # self.label_1.setObjectName("label1")
+        # self.label_1.setFont(font)
 
         # 목표몸무게 멘트
         self.label_1_1 = QtWidgets.QLabel(Dialog)
-        self.label_1_1.setGeometry(QtCore.QRect(40, 100, 170, 15))
+        self.label_1_1.setGeometry(QtCore.QRect(20, 100, 170, 20))
         self.label_1_1.setObjectName("label1_1")
-        self.label_1_1.setStyleSheet("font: 13pt \"BM DoHyeon\";")
+        self.label_1_1.setStyleSheet("font: 8pt \"BM DoHyeon\";")
 
         #progressBar
         self.progressBar = QtWidgets.QProgressBar(Dialog)
-        self.progressBar.setGeometry(QtCore.QRect(40, 50, 90, 60))
+        self.progressBar.setGeometry(QtCore.QRect(20, 70, 130, 20))
         self.progressBar.setProperty("value", self.goal)
         self.progressBar.setObjectName("progressBar")
 
         #BMI 지수
         self.label_2 = QtWidgets.QLabel(Dialog)
-        self.label_2.setGeometry(QtCore.QRect(40, 150, 200, 30))
+        self.label_2.setGeometry(QtCore.QRect(20, 150, 200, 30))
         self.label_2.setObjectName("label2")
         self.label_2.setFont(font)
 
         # BMI 지수멘트
         self.label_2_2 = QtWidgets.QLabel(Dialog)
-        self.label_2_2.setGeometry(QtCore.QRect(40, 180, 200, 30))
+        self.label_2_2.setGeometry(QtCore.QRect(20, 180, 200, 30))
         self.label_2_2.setObjectName("label2_2")
         self.label_2_2.setFont(font)
 
@@ -70,7 +70,7 @@ class Rec_Dialog(object):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "운동기록"))
         self.label.setText(_translate("Dialog", "<h2>목표몸무게 달성</h2>"))
-        self.label_1.setText(_translate("Dialog", str(self.goal)+"%"))
+        # self.label_1.setText(_translate("Dialog", str(self.goal)+"%"))
 
         if(self.goal < 50):
             self.label_1_1.setText(_translate("Dialog", "조금 더 분발하세요!"))

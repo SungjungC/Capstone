@@ -2,14 +2,13 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from database import Db
 from home import Ui_MainWindow
 
-
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.setFixedSize(700, 500)
 
         font = QtGui.QFont()
-        font.setFamily("BM DoHyeon")
+        font.setFamily("배달의민족 도현")
         font.setPointSize(12)
         Dialog.setStyleSheet("background-color:rgb(255,255,255)\n")
 
@@ -88,10 +87,11 @@ class Ui_Dialog(object):
         self.label_Heading.setGeometry(QtCore.QRect(120, 30, 135, 61))
         self.label_Heading.setObjectName("label_Heading")
         self.label_Heading.setStyleSheet("color: rgb(51, 0, 51);\n"
-                                         "font: 20pt \"BM DoHyeon\";")
+                                         "font: 13pt \"BM DoHyeon\";")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
+        self.Dialog =Dialog
 
     def signupNickCheck2(self):  # 닉네임 체크
         nickname = self.txtNickName.text()
@@ -114,7 +114,6 @@ class Ui_Dialog(object):
 
     def signupCheck2(self):  # 이메일 있는지 체크
         email = self.txtEmail.text()
-
         getDb = Db()
         check = getDb.signupCheck(email)
 
@@ -147,6 +146,7 @@ class Ui_Dialog(object):
                     Db().insertTable(email, nickname, password)
                     self.showMessage("Success", "회원가입이 완료되었습니다")
                     self.clearField()
+                    self.Dialog.hide()
 
             else:
                 self.showMessage("Error", "비밀번호가 일치하지 않습니다")
