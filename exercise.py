@@ -154,11 +154,11 @@ class Example(object):
                 if(text[0]=='교'):
                     mixer.music.load('sound/'+str(self.case)+'-1.mp3')
                     mixer.music.play()
-                # elif(ready==True):
-                    # mixer.music.load('sound/'+str(self.case)+str(count)+'.mp3')
-                    # mixer.music.play()
+                elif(ready==True):
+                    mixer.music.load('sound/'+str(self.case)+'-2.mp3')
+                    mixer.music.play()
                 elif(ready==False):
-                    mixer.music.load('sound/'+str(self.case)+'0.mp3')
+                    mixer.music.load('sound/'+str(self.case)+'-3.mp3')
                     mixer.music.play()
 
             image = cv2.flip(image, 1)
